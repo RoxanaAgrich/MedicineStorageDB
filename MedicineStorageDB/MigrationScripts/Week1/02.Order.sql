@@ -1,13 +1,11 @@
 ﻿USE MedicineStorageDB
-go 
--- Note: Allow NULL
+GO 
 IF COL_LENGTH('Order', 'Note') IS NULL
 BEGIN
     ALTER TABLE [Order]
     ADD Note NVARCHAR(MAX) NULL;
 END;
 
--- Status: NOT NULL, default 1
 IF COL_LENGTH('Order', 'Status') IS NULL
 BEGIN
     ALTER TABLE [Order]
@@ -15,7 +13,6 @@ BEGIN
         CONSTRAINT DF_Order_Status DEFAULT 1;
 END;
 
--- ExpectedDate: NOT NULL, default GETDATE() + 3
 IF COL_LENGTH('Order', 'ExpectedDate') IS NULL
 BEGIN
     ALTER TABLE [Order]
@@ -23,7 +20,6 @@ BEGIN
         CONSTRAINT DF_Order_ExpectedDate DEFAULT (DATEADD(DAY, 3, GETDATE()));
 END;
 
--- PaymentType: NOT NULL, default 2
 IF COL_LENGTH('Order', 'PaymentType') IS NULL
 BEGIN
     ALTER TABLE [Order]
@@ -31,7 +27,6 @@ BEGIN
         CONSTRAINT DF_Order_PaymentType DEFAULT 2;
 END;
 
--- IsPaid: NOT NULL, default 1
 IF COL_LENGTH('Order', 'IsPaid') IS NULL
 BEGIN
     ALTER TABLE [Order]

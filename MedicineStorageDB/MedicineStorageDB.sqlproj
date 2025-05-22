@@ -65,5 +65,9 @@
     <None Include="MigrationScripts\Week1\03.User.sql" />
     <None Include="MigrationScripts\Week1\04.Inventory.sql" />
     <None Include="MigrationScripts\Week1\05.User.sql" />
+    <None Include="MigrationScripts\BeginTransaction.sql" />
+    <None Include="MigrationScripts\CommitTransaction.sql" />
+    <PostDeploy Include="MigrationScripts\Script.PostDeployment.sql" />
+    <None Include="MedicineStorageDB.publish.xml.sql" />
   </ItemGroup>
 </Project>
